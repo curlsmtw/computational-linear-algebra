@@ -14,3 +14,7 @@ python -m venv .venv
 ```bash
 pip install -r requirements.txt
 ```
+5. Run Python files by using the following commands:
+```bash
+python homeworks/one.py
+```
