@@ -33,6 +33,7 @@ python-dateutil==2.9.0.post0
 pytz==2025.1
 pywin32==308
 pyzmq==26.2.0
+scipy==1.15.1
 six==1.17.0
 stack-data==0.6.3
 sympy==1.13.3
