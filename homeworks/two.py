@@ -1,8 +1,18 @@
-import numpy as mp
+import numpy as np
 import sympy as smp
 # Problem 1: Write a Python program to find the Reduced Row Echelon Form (RREF)
 # of a given matrix A =1 1 4
 #                   −0.5 1 2
+
+matrix_one = np.array([[1, 1, 4], [-1/2,1,2]])
+print("Original Matrix", matrix_one)
+
+sym_matrix_one = smp.Matrix(matrix_one)
+print("sympy one:\n", sym_matrix_one)
+
+rref_matrix_one = sym_matrix_one.rref()[0]
+print("rref(one):\n",rref_matrix_one)
+
 
 # Problem 2: Write a Python program to find the Reduced Row Echelon Form (RREF)
 # of a given matrix
@@ -13,6 +23,25 @@ import sympy as smp
 #         1 2 1 4
 #        −1 −1 2 1
 
+matrix_twoa = np.array([[1,2,3], [4,5,6], [7,8,9]])
+print("Original 2A Matrix", matrix_twoa)
+
+sym_matrix_twoa = smp.Matrix(matrix_twoa)
+print("sympy 2A:\n", sym_matrix_twoa)
+
+rref_matrix_twoa = sym_matrix_twoa.rref()[0]
+print("rref(2A):\n",rref_matrix_twoa)
+
+
+matrix_twob = np.array([[2,2,-1,2], [1,2,1,4], [-1,-1,2,1]])
+print("Original 2B Matrix:", matrix_twob)
+
+sym_matrix_twob = smp.Matrix(matrix_twob)
+print("sympy 2b:\n", sym_matrix_twob)
+
+rref_matrix_twob = sym_matrix_twob.rref()[0]
+print("rref(2B):\n",rref_matrix_twob)
+
 # Problem 3: Use RREF to solve the linear system A~x = ~b.
 # A = 2 2 −1
 #     1 2 1
@@ -21,6 +50,16 @@ import sympy as smp
 # b = 2
 #     4
 #     1
+
+matrix_three_a = smp.Matrix([[2,2,-1], [1,2,1], [-1,-1,2]])
+matrix_three_b = smp.Matrix([[2], [4], [1]])
+
+aug_matrix = matrix_three_a.row_join(matrix_three_b)
+print("3A Augmented Matrix:\n", aug_matrix)
+rref_matrix_three = aug_matrix.rref()[0]
+print("RREF of the augmented matrix:", rref_matrix_three)
+solution = smp.linsolve((matrix_three_a, matrix_three_b))
+print("Soulution:", solution)
 
 # Problem 4: 4. Use an LU -factorization of the coefficient matrix to solve the linear system
 # A~x = ~b.
