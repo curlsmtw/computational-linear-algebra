@@ -1,5 +1,6 @@
 import numpy as np
 import sympy as smp
+import scipy.linalg as lg
 # Problem 1: Write a Python program to find the Reduced Row Echelon Form (RREF)
 # of a given matrix A =1 1 4
 #                   −0.5 1 2
@@ -51,6 +52,8 @@ print("rref(2B):\n",rref_matrix_twob)
 #     4
 #     1
 
+
+
 matrix_three_a = smp.Matrix([[2,2,-1], [1,2,1], [-1,-1,2]])
 matrix_three_b = smp.Matrix([[2], [4], [1]])
 
@@ -61,6 +64,8 @@ print("RREF of the augmented matrix:", rref_matrix_three)
 solution = smp.linsolve((matrix_three_a, matrix_three_b))
 print("Soulution:", solution)
 
+
+
 # Problem 4: 4. Use an LU -factorization of the coefficient matrix to solve the linear system
 # A~x = ~b.
 # A = 2 2 −1
@@ -69,7 +74,14 @@ print("Soulution:", solution)
 # ~b = 2
 #      4
 #      1
+matrix_four_a = np.array([[2,2,-1], [1,2,1], [-1,-1,2]])
+matrix_four_b = np.array([[2], [4], [1]])
 
+four_p, four_l, four_u = lg.lu(matrix_four_a)
+print("L=\n", four_l, "\nU=\n", four_u, "\nP=\n", four_p)
+four_y = lg.solve(four_l, matrix_four_b)
+four_x = lg.solve(four_u, four_y)
+print("x=\n", four_x)
 # Problem 5: 5. Use an LU -factorization of the coefficient matrix to solve the linear system
 # A~x = ~b.
 # A = 4 −1 −1
@@ -78,6 +90,15 @@ print("Soulution:", solution)
 # ~b = 2
 #      2
 #      2
+
+matrix_five_a = np.array([[4,-1,-1], [-1,4,-1], [-1,-1,4]])
+matrix_five_b = np.array([[2], [2], [2]])
+
+five_p, five_l, five_u = lg.lu(matrix_five_a)
+print("L=\n", five_l, "\nU=\n", five_u, "\nP=\n", five_p)
+five_y = lg.solve(five_l, matrix_five_b)
+five_x = lg.solve(five_u, five_y)
+print("x=\n", five_x)
 
 # Problem 6: One application of LU is computing the determinant. 
 # We know that the determinant of a triangular matrix is the product 
