@@ -37,6 +37,7 @@ x1 = np.linalg.solve(R1, y1)
 print("Solution to 1(c):\n ", x1)
 
 
+
 # 2-a: Compute the QR decomposition of the matrix Ax = b, where 
 # A = [4 −1 −1
 # 	−1 4 −1
