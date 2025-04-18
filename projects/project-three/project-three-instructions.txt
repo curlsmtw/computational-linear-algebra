@@ -1,0 +1,34 @@
+Image Compression Using SVD
+The purpose of this assignment is to explore image compression using Singular Value Decomposition (SVD). We will work with an image, convert it to grayscale, apply SVD, and then reconstruct the image using different ranks.
+We will also calculate the compression ratio and analyze the effects of rank on image quality and compression.
+
+Instructions
+1. Image Preprocessing
+    a. Load an image of your choice (e.g., ‘bev.jpg‘).
+    b. Convert the image to grayscale for simplicity in processing.
+    c. Resize the grayscale image to a smaller size (e.g., 50x50 pixels) to speed up the processing.
+2. Singular Value Decomposition (SVD)
+    a. Apply the Singular Value Decomposition (SVD) on the grayscale image. This decomposition expresses the image matrix as the product of three matrices:
+        A = U · S · V^T
+    where A is the image matrix, U and V^T are orthogonal matrices, and S is a diagonal matrix containing the singular values.
+    b. Plot a scree plot of the singular values. The x-axis should represent the index of the singular value, and the y-axis should represent the magnitude of the singular value.
+3. Image Compression and Reconstruction
+    a. Reconstruct the image using the first k singular values (for different values of k) and display the results.
+    b. The number of singular values, k, will determine the rank of the reconstruction. Try different values of k such as 1, 5, 10, 20, and 50.
+    The image can be reconstructed as:
+        Ak =K E i=1 Si · ui · vi^T
+    where ui and vi are the columns of the U matrix and rows of the V^T matrix, respectively, and Si is the corresponding singular value.
+    c. Display the original image and the reconstructed images for comparison.
+4. Compression Ratio
+    a. Calculate the compression ratio for each rank. The compression ratio can be calculated as:
+        Compression Ratio = (k · (m + n + 1))/(m · n)
+    where m and n are the dimensions of the original image, and k is the rank (number of singular values used in the reconstruction).
+    b. Display the compression ratios for the selected ranks and analyze how the rank affects the compression.
+
+
+Report
+In your report, address the following:
+    - Describe the process of Singular Value Decomposition and how it is used for image compression.
+    - Discuss the effects of using different ranks in the image reconstruction. How does the image quality change as the rank increases?
+    - Analyze the compression ratio. How does the compression ratio relate to the rank? How much compression is achieved at different ranks?
+    - Provide your observations about the trade-off between image quality and compression.
