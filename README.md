@@ -18,3 +18,5 @@ pip install -r requirements.txt
 ```bash
 python homeworks/one.py
 ```
+About the class:
+Driven by the needs of applications, this course studies reliable and computationally efficient techniques for practical linear algebra problems arising in sciences and engineering. Topics include vector spaces, orthogonal matrices, eigenvalues and eigenvectors, Q-R factorization, singular value decompositions, least-squares fits, generalized inverse, systems of linear differential equations, special matrices, precision and computational cost of algorithms. Students will learn how to approach a large variety of problems and implement an appropriate technique and software as needed.
